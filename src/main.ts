@@ -1,11 +1,13 @@
-// src/main.ts (hoặc một file khởi tạo)
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { UserService } from './users/users.service';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
+  app.useGlobalPipes(new ValidationPipe({
+    whitelist: true,
+    forbidNonWhitelisted: true,
+  }));
   await app.listen(3000);
 }
 bootstrap();
