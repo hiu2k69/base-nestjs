@@ -37,11 +37,14 @@ let UserService = class UserService {
     }
     async update(id, updateUserDto) {
         const user = await this.findOne(id);
-        if (user) {
-            Object.assign(user, updateUserDto);
-            return await this.userRepository.save(user);
+        if (updateUserDto.email) {
+            const existingUser = await this.userRepository.findOneBy({ email: updateUserDto.email });
+            if (existingUser && existingUser.id !== id) {
+                throw new common_1.ConflictException('Email already exists');
+            }
         }
-        return null;
+        Object.assign(user, updateUserDto);
+        return this.userRepository.save(user);
     }
     async remove(id) {
         const result = await this.userRepository.delete(id);
