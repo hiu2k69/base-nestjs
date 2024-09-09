@@ -2,11 +2,13 @@ import { UserService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
+import { WebsocketService } from './websocket.service';
 export declare class UsersController {
+    private readonly websocketService;
     private readonly usersService;
-    constructor(usersService: UserService);
+    constructor(websocketService: WebsocketService, usersService: UserService);
+    findAll(): Promise<any>;
     create(createUserDto: CreateUserDto): Promise<User>;
-    findAll(): Promise<User[]>;
     findOne(id: string): Promise<User>;
     update(id: string, updateUserDto: UpdateUserDto): Promise<User>;
     remove(id: string): Promise<string>;

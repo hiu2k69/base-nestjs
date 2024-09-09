@@ -4,6 +4,7 @@ import { User } from './users/entities/user.entity';
 import { UsersController } from './users/users.controller';
 import { UserService } from './users/users.service';
 import { UsersModule } from './users/users.module';
+import { WebsocketModule } from './users/websocket.module'; // Đảm bảo đúng đường dẫn
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { UsersModule } from './users/users.module';
     }),
     TypeOrmModule.forFeature([User]),
     UsersModule,
+    WebsocketModule,
   ],
   controllers: [UsersController],
   providers: [UserService],

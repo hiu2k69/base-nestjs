@@ -13,6 +13,7 @@ const user_entity_1 = require("./users/entities/user.entity");
 const users_controller_1 = require("./users/users.controller");
 const users_service_1 = require("./users/users.service");
 const users_module_1 = require("./users/users.module");
+const websocket_module_1 = require("./users/websocket.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -31,6 +32,7 @@ exports.AppModule = AppModule = __decorate([
             }),
             typeorm_1.TypeOrmModule.forFeature([user_entity_1.User]),
             users_module_1.UsersModule,
+            websocket_module_1.WebsocketModule,
         ],
         controllers: [users_controller_1.UsersController],
         providers: [users_service_1.UserService],
