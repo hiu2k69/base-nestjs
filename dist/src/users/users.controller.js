@@ -24,16 +24,6 @@ let UsersController = class UsersController {
         this.websocketService = websocketService;
         this.usersService = usersService;
     }
-    async findAll() {
-        try {
-            const users = await this.websocketService.findAll();
-            return users;
-        }
-        catch (error) {
-            console.error('Could not retrieve user list:', error);
-            throw new Error('Could not retrieve user list');
-        }
-    }
     async create(createUserDto) {
         return this.usersService.create(createUserDto);
     }
@@ -72,12 +62,6 @@ let UsersController = class UsersController {
     }
 };
 exports.UsersController = UsersController;
-__decorate([
-    (0, common_1.Get)(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], UsersController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Post)(),
     (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('file')),

@@ -13,16 +13,16 @@ export class UsersController {
     private readonly usersService: UserService,
   ) {}
 
-  @Get()  
-  async findAll() {  
-    try {  
-      const users = await this.websocketService.findAll();  
-      return users;  
-    } catch (error) {  
-      console.error('Could not retrieve user list:', error);  
-      throw new Error('Could not retrieve user list'); 
-    }  
-  }
+  // @Get()  
+  // async findAll() {  
+  //   try {  
+  //     const users = await this.websocketService.findAll();  
+  //     return users;  
+  //   } catch (error) {  
+  //     console.error('Could not retrieve user list:', error);  
+  //     throw new Error('Could not retrieve user list'); 
+  //   }  
+  // }
   @Post()
   @UseInterceptors(FileInterceptor('file'))
   async create(@Body() createUserDto: CreateUserDto): Promise<User> {

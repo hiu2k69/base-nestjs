@@ -7,7 +7,6 @@ export declare class UsersController {
     private readonly websocketService;
     private readonly usersService;
     constructor(websocketService: WebsocketService, usersService: UserService);
-    findAll(): Promise<any>;
     create(createUserDto: CreateUserDto): Promise<User>;
     findOne(id: string): Promise<User>;
     update(id: string, updateUserDto: UpdateUserDto): Promise<User>;
