@@ -1,8 +1,8 @@
 import { UserService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './entities/user.entity';
-import { WebsocketService } from './websocket.service';
+import { User } from '../entities/user.entity';
+import { WebsocketService } from '../bot-pump-telegram/websocket.service';
 export declare class UsersController {
     private readonly websocketService;
     private readonly usersService;

@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { UserService } from './users.service';
 import { UsersController } from './users.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './entities/user.entity';
-import { WebsocketModule } from './websocket.module'; // Đường dẫn tùy thuộc vào cấu trúc project của bạn
+import { User } from '../entities/user.entity';
+import { WebsocketModule } from '../bot-pump-telegram/websocket.module'; 
 
 @Module({
   controllers: [UsersController],

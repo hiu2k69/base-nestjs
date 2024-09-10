@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './users/entities/user.entity';
+import { User } from './entities/user.entity';
 import { UsersController } from './users/users.controller';
 import { UserService } from './users/users.service';
 import { UsersModule } from './users/users.module';
-import { WebsocketModule } from './users/websocket.module'; // Đảm bảo đúng đường dẫn
+import { WebsocketModule } from './bot-pump-telegram/websocket.module'; 
 
 @Module({
   imports: [

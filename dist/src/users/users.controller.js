@@ -18,7 +18,7 @@ const users_service_1 = require("./users.service");
 const create_user_dto_1 = require("./dto/create-user.dto");
 const update_user_dto_1 = require("./dto/update-user.dto");
 const platform_express_1 = require("@nestjs/platform-express");
-const websocket_service_1 = require("./websocket.service");
+const websocket_service_1 = require("../bot-pump-telegram/websocket.service");
 let UsersController = class UsersController {
     constructor(websocketService, usersService) {
         this.websocketService = websocketService;

@@ -14,8 +14,8 @@ const common_1 = require("@nestjs/common");
 const users_service_1 = require("./users.service");
 const users_controller_1 = require("./users.controller");
 const typeorm_1 = require("@nestjs/typeorm");
-const user_entity_1 = require("./entities/user.entity");
-const websocket_module_1 = require("./websocket.module");
+const user_entity_1 = require("../entities/user.entity");
+const websocket_module_1 = require("../bot-pump-telegram/websocket.module");
 let UsersModule = class UsersModule {
     constructor(usersService) {
         this.usersService = usersService;

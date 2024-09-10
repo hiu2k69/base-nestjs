@@ -2,9 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UseInterceptors, Not
 import { UserService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './entities/user.entity';
+import { User } from '../entities/user.entity';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { WebsocketService } from './websocket.service';
+import { WebsocketService } from '../bot-pump-telegram/websocket.service';
 
 @Controller('users')
 export class UsersController {
